@@ -32,17 +32,21 @@ class Score:
                         self.score_text(MENU_STYLE["text_font_small"], letra, MENU_STYLE["text_color_small"],
                                         (width + MENU_STYLE["position_x"], height + MENU_STYLE["position_y"]))
                     width += title["spacing"]
-            score = player_score[0]
-            text = 'Enter Player 1 name (4 characters):'
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
-            if game_mode == MENU_OPTION[1]:
+                player_name_label = "Player 1"
+            elif game_mode == MENU_OPTION[1]:
                 if player_score[0] >= player_score[1]:
                     score = player_score[0]
-                    text = 'Enter Player 1 name (4 characters):'
+                    player_name_label = "Player 1"
                 else:
                     score = player_score[1]
-                    text = 'Enter Player 2 name (4 characters):'
+                    player_name_label = "Player 2"
+            else:
+                score = player_score[0]
+                player_name_label = "Player 1"
+
+            text = f'Enter {player_name_label} name (4 characters):'
             self.score_text(24, text, C_WHITE, SCORE_POS['EnterName'])
 
             for event in pygame.event.get():
@@ -50,7 +54,7 @@ class Score:
                     pygame.quit()
                     sys.exit()
                 elif event.type == KEYDOWN:
-                    if event.key == K_RETURN and len(name) == 6:
+                    if event.key == K_RETURN and len(name) == 4:
                         db_proxy.save({'name': name, 'score': score, 'date': get_formatted_date()})
                         self.show()
                         return
@@ -74,9 +78,9 @@ class Score:
             for letra in title["text"]:
                 if letra != " ":
                     self.score_text(MENU_STYLE["text_font_big"], letra, MENU_STYLE["text_color_big"],
-                                        (width, height))
+                                    (width, height))
                     self.score_text(MENU_STYLE["text_font_small"], letra, MENU_STYLE["text_color_small"],
-                                        (width + MENU_STYLE["position_x"], height + MENU_STYLE["position_y"]))
+                                    (width + MENU_STYLE["position_x"], height + MENU_STYLE["position_y"]))
                 width += title["spacing"]
                 self.score_text(24, "NAME SCORE  DATE", C_BLACK, SCORE_POS['Label0'])
                 self.score_text(24, "NAME SCORE  DATE", C_YELLOW, SCORE_POS['Label1'])
@@ -95,10 +99,9 @@ class Score:
                     sys.exit()
                 if event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
-                        return
+                        continue
 
             pygame.display.flip()
-
 
     def score_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
         text_font: Font = pygame.font.Font("./asset/MenuBg.ttf", size=text_size)

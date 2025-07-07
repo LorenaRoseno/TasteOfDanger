@@ -7,7 +7,7 @@ from pygame.font import Font
 
 from code.background import Background
 from code.const import TIMEOUT_LEVEL, MENU_OPTION, EVENT_FOOD, EVENT_TIMEOUT, TIMEOUT_STEP, WIN_WIDTH, C_WHITE, \
-    WIN_HEIGHT, C_BLACK, C_YELLOW, SPAWN_TIME, C_LIGHT_GREEN, C_GREY, C_ORANGE
+    WIN_HEIGHT, C_BLACK, C_YELLOW, SPAWN_TIME, C_LIGHT_GREEN, C_ORANGE
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 from code.entityMediator import EntityMediator
@@ -66,10 +66,11 @@ class Level:
                 self.window.blit(ent.surf, ent.rect)
                 if ent.name == 'Player1':
                     self.level_text(15, f'Player1 - Health {ent.health} | Score: {ent.score}', C_BLACK, (30, 25))
-                    self.level_text(15, f'Player1 - Health {ent.health} | Score: {ent.score}', C_WHITE, (32, 26))
+                    self.level_text(15, f'Player1 - Health {ent.health} | Score: {ent.score}', C_LIGHT_GREEN, (32, 26))
+
                 if ent.name == 'Player2':
                     self.level_text(15, f'Player2 - Health {ent.health} | Score: {ent.score}', C_BLACK, (30, 50))
-                    self.level_text(15, f'Player2 - Health {ent.health} | Score: {ent.score}', C_LIGHT_GREEN, (32, 51))
+                    self.level_text(15, f'Player2 - Health {ent.health} | Score: {ent.score}', C_WHITE, (32, 51))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()

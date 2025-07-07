@@ -11,6 +11,3 @@ class PoisonFood(Entity):
 
     def move(self, ):
         pass
-
-    def hurt_player(self, ):
-        pass

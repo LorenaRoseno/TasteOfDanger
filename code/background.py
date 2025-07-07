@@ -11,6 +11,3 @@ class Background:
 
     def run(self):
         self.window.blit(self.surf, self.rect)
-
-    def show_food(self, ):
-        pass

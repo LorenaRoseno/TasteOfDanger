@@ -10,7 +10,6 @@ class GoodFood(Entity):
         self.spawn_time = pygame.time.get_ticks()
         self.duration = 3000
 
-
     def move(self):
         pass
 

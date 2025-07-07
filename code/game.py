@@ -40,7 +40,7 @@ class Game:
                     continue
 
             elif menu_return == MENU_OPTION[2]:
-                score.show() # Show score
+                score.show()  # Show score
                 continue
 
             if menu_return == MENU_OPTION[3]:  # EXIT

@@ -5,7 +5,7 @@ C_WHITE = (255, 255, 255)
 C_YELLOW = (218, 165, 32)
 C_LIGHT_GREEN = (144, 238, 144)
 C_BLACK = (0, 0, 0)
-C_GREY = (128,128,128)
+C_GREY = (128, 128, 128)
 C_ORANGE = (255, 140, 0)
 # E
 ENTITY_DAMAGE = {
@@ -137,18 +137,18 @@ SCORE_TITLE = [
     }
 ]
 
-SCORE_POS = {'Title': ((WIN_WIDTH / 2)  , 70),
-             'EnterName': ((WIN_WIDTH / 2)+ 280, 300),
+SCORE_POS = {'Title': ((WIN_WIDTH / 2), 70),
+             'EnterName': ((WIN_WIDTH / 2) + 280, 300),
              'Label0': ((WIN_WIDTH / 2) + 258, 140),
              'Label1': ((WIN_WIDTH / 2) + 260, 141),
-             'Name': ((WIN_WIDTH / 2) + 200 , 350),
+             'Name': ((WIN_WIDTH / 2) + 200, 350),
              0: ((WIN_WIDTH / 2) + 270, 190),
              1: ((WIN_WIDTH / 2) + 270, 220),
              2: ((WIN_WIDTH / 2) + 270, 250),
              3: ((WIN_WIDTH / 2) + 270, 280),
              4: ((WIN_WIDTH / 2) + 270, 310),
              5: ((WIN_WIDTH / 2) + 270, 340),
-             6: ((WIN_WIDTH / 2) + 270 , 370),
+             6: ((WIN_WIDTH / 2) + 270, 370),
              7: ((WIN_WIDTH / 2) + 270, 400),
              8: ((WIN_WIDTH / 2) + 270, 430),
              9: ((WIN_WIDTH / 2) + 270, 460)

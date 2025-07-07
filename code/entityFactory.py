@@ -11,18 +11,18 @@ class EntityFactory:
     def get_entity(entity_name: str):
         match entity_name:
             case 'Player1':
-                return Player('Player1', (WIN_WIDTH / 2 - 200 , WIN_HEIGHT / 2 - 30))
+                return Player('Player1', (WIN_WIDTH / 2 - 200, WIN_HEIGHT / 2 - 30))
             case 'Player2':
                 return Player('Player2', (WIN_WIDTH / 2 + 200, WIN_HEIGHT / 2 - 30))
 
             case 'GoodFood':
                 food_type = random.choice(['fruit', 'vegetable'])
                 name = food_type
-                if food_type== "fruit":
+                if food_type == "fruit":
                     fruit = [f'GFFru{i}' for i in range(1, 10)]
                     name = random.choice(fruit)
 
-                elif food_type== "vegetable":
+                elif food_type == "vegetable":
                     vegetable = [f'GFVeg{i}' for i in range(1, 5)]
                     name = random.choice(vegetable)
 
@@ -41,6 +41,3 @@ class EntityFactory:
                 return PoisonFood(name, position)
 
         return None
-
-
-

@@ -54,8 +54,6 @@ class EntityMediator:
                 EntityMediator.__verify_collision_good_food(entity1, entity2, entity_list, to_remove)
                 EntityMediator.__verify_collision_poison_food(entity1, entity2, entity_list, to_remove)
 
-
         for ent in to_remove:
             if ent in entity_list:
                 entity_list.remove(ent)
-
