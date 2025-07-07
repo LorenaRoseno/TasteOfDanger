@@ -2,7 +2,7 @@ import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.const import MENU_OPTION, WIN_WIDTH, C_WHITE, MENU_TITLES, MENU_STYLE, C_LIGHT_GREEN
+from code.const import MENU_OPTION, WIN_WIDTH, C_WHITE, MENU_TITLE, MENU_STYLE, C_LIGHT_GREEN
 
 
 class Menu:
@@ -18,7 +18,7 @@ class Menu:
         while True:
             # Draw images
             self.window.blit(source=self.surf, dest=self.rect)
-            for title in MENU_TITLES:
+            for title in MENU_TITLE:
                 width = title["initial_x"]
                 height = title["initial_y"]
 
